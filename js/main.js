@@ -4,13 +4,15 @@
 // }
 
 // 50回の試験のうち一回でも70点以上を取り、合格すれば、試験は受けなくても良くなる処理を書いて下さい。
-let score = Math.floor(Math.random * 100) + 1;
-let count = 0;
-while (count > 0) {
-  if (score >= 70) {
+let count = 0; //テストの回数を記述する
+while (count < 50) { //テストの回数が50回の間の処理
+  count += 1; // テストの回数をカウントする
+  let score = Math.floor(Math.random() * 100) + 1; //scoreという変数は1から100までの乱数を表す
+  console.log(score);
+  if (score >= 70) { //もし70点以上だったら、「合格」と表示して処理を終了する
     console.log("合格");
-    exit;
-  } else {
+    break;
+  } else { //70点より低い場合は、点数を表示して、処理を続ける
     console.log(score);
     continue;
   }
